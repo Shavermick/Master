@@ -1,28 +1,116 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Characteristic : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-}
+    [Header("Text Basic Info")]
+    public Text _ClassPlayer;
+    public Text _Lvl;
+    public Text _HP;
+    public Text _MP;
 
-public class Characteristics
-{
-	public static bool OpenCharacterist(GameObject PanelCharacterisitc, bool Open)
+    [Header("Text Basic Characteristic")]
+    public Text _Strength;
+    public Text _Agility;
+    public Text _Intelligence;
+    public Text _Vitality;
+
+    [Header("Text Characteristic Attack and Def")]
+
+    public Text _MaxAndMinPhAttack;
+    public Text _MaxAndMinMgAttack;
+    public Text _PhysicalDef;
+    public Text _MagicDef;
+
+    [Header("Basic Info")]
+
+    [SerializeField] private string ClassPlayer;
+    [SerializeField] private int Lvl;
+    [SerializeField] private float MaxHP;
+    [SerializeField] private float RealHp;
+    [SerializeField] private float MaxMp;
+    [SerializeField] private float RealMp;
+
+    // Метод для проверки Hp на отрицаемость 
+    public float _Health
+    {
+        get { return RealHp; }
+        set
+        {
+            if (value < 0)
+            {
+                value = 0;
+            }
+        }
+    }
+
+
+
+    [Header("Basic Characteristic")]
+
+    [SerializeField] private int Strength;
+    [SerializeField] private int Agiliy;
+    [SerializeField] private int Intelligence;
+    [SerializeField] private int Vitality;
+
+    [Header("Characteristic Attack and Def")]
+    
+    [SerializeField] private int MinPhysicalAttack;
+    [SerializeField] private int MaxPhysicalAttack;
+    [SerializeField] private int MinMagicAttack;
+    [SerializeField] private int MaxMagicAttack;
+    [SerializeField] private int PhysicalDef;
+    [SerializeField] private int MagicDef;
+
+
+    // Метод для открытия панели характеристик
+    //
+    public static bool OpenCharacterist(GameObject PanelCharacterisitc, bool Open)
 	{
 		Open = !Open;
 		PanelCharacterisitc.SetActive(Open);
 		return Open;
 	}
-
 	
+
+    void Start()
+    {
+        // Инициализация начальных характеристик персонажа
+        //
+        ClassPlayer = "Мечник";
+        Lvl = 1;
+        MaxHP = 500;
+        MaxMp = 500;
+        
+        Strength = 20;
+        Agiliy = 25;
+        Intelligence = 15;
+        Vitality = 20;
+
+        MinPhysicalAttack = 150;
+        MaxPhysicalAttack = 300;
+        MinMagicAttack = 100;
+        MaxMagicAttack = 150;
+        PhysicalDef = 200;
+        MagicDef = 150;
+
+        _ClassPlayer.text = ClassPlayer;
+    }
+
+    void LateUpdate()
+    {
+        _Lvl.text = Lvl.ToString();
+        _HP.text = MaxHP.ToString();
+        _MP.text = MaxMp.ToString();
+
+        _Strength.text = Strength.ToString();
+        _Agility.text = Agiliy.ToString();
+        _Intelligence.text = Intelligence.ToString();
+        _Vitality.text = Vitality.ToString();
+
+        _MaxAndMinPhAttack.text = MinPhysicalAttack.ToString() + " ~ " + MaxPhysicalAttack.ToString();
+        _MaxAndMinMgAttack.text = MinMagicAttack.ToString() + " ~ " + MaxMagicAttack.ToString();
+        _PhysicalDef.text = PhysicalDef.ToString();
+        _MagicDef.text = MagicDef.ToString();
+    }
 }

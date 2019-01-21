@@ -58,7 +58,7 @@ public class ControllerKey : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            OpenCharacteristic = Characteristics.OpenCharacterist(_Characteristic,OpenCharacteristic);
+            OpenCharacteristic = Characteristic.OpenCharacterist(_Characteristic,OpenCharacteristic);
         }
 
         if (Input.GetKeyDown(KeyCode.K))
