@@ -26,7 +26,7 @@ public class ControllerKey : MonoBehaviour {
     [SerializeField] private static bool OpenMap;
     void Start ()
     {
-		OpenSystemStatys = false; 
+		OpenSystemStatys = true; 
         _SystemStatys.SetActive(OpenSystemStatys);
 
         OpenInventor = false;
@@ -45,12 +45,6 @@ public class ControllerKey : MonoBehaviour {
 	
 	void Update () 
     {
-        
-		if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            OpenSystemStatys =SysteamControl.OpenSystem(_SystemStatys,OpenSystemStatys);
-        }
-
         if (Input.GetKeyDown(KeyCode.I))
         {
           OpenInventor = Inventorys.OpenInventory(_Inventory, OpenInventor);

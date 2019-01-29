@@ -1,40 +1,81 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
+using UnityEngine.UI;
 public class SystemControl : MonoBehaviour {
 
-	public void CloseSystem(GameObject SystemPanel)
+	public GameObject PanelSystemMenu;
+	public Button Xmark;
+
+	// Метод для закрытия меню
+	//
+	public void ReturnGame()
 	{
-		SystemPanel.SetActive(false);
+		PanelSystemMenu.SetActive(false);
 	}
 
-	public void LoadMenu(GameObject PanelСonfirmation)
+	// Метод для сохранения игры
+	//
+	public void SaveGame()
 	{
-		PanelСonfirmation.SetActive(true);
+
+	}
+	
+	// Метод для загрузки игры
+	//
+	public void LoadGame()
+	{
+
 	}
 
-	public void CloseDilogPanel(GameObject PanelClose)
+	// Метод для вызова панели управления
+	//
+	public void ManagementGame(GameObject PanelManagement)
 	{
-		PanelClose.SetActive(false);
+		PanelSystemMenu.SetActive(false);
+		PanelManagement.SetActive(true);
 	}
 
-	public void LoadMenu()
+	// Метод для возврата в главное меню
+	//
+	public void ExitMainMenu(GameObject PanelConfirmation)
+	{
+		PanelSystemMenu.SetActive(false);
+		PanelConfirmation.SetActive(true);
+	}
+
+	// Метод для выхода из игры
+	//
+	public void ExitGame(GameObject PanelConfirmation)
+	{
+		PanelSystemMenu.SetActive(false);
+		PanelConfirmation.SetActive(true);
+	}
+
+	// Метод для подтверждения выхода в главное меню
+	//
+	public void YesExitMenu()
 	{
 		Application.LoadLevel("Menu");
 	}
-	 public void ExitGame()
+
+	// Метод для подтверждения выхода в игру
+	//
+	public void YesExitGame()
 	{
 		Application.Quit();
 	}
-}
 
-public class SysteamControl
-{
-	public static bool OpenSystem(GameObject SystemPanel, bool Open)
+	// Метод для отмены выхода
+	//
+	public void NoExitAll(GameObject ButtonNo)
 	{
-		Open = !Open;
-		SystemPanel.SetActive(Open);
-		return Open;
+		ButtonNo.SetActive(false);
+	}
+
+	// Метод для закрытия крестиков
+	//
+	public static void CloseXMark(bool IsopenPanel, GameObject PanelOpen)
+	{
+		IsopenPanel = !IsopenPanel;
+		PanelOpen.SetActive(IsopenPanel);
 	}
 }
