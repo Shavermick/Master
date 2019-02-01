@@ -73,9 +73,9 @@ public class SystemControl : MonoBehaviour {
 
 	// Метод для закрытия крестиков
 	//
-	public static void CloseXMark(bool IsopenPanel, GameObject PanelOpen)
+	/*public static void CloseXMark(bool IsopenPanel, GameObject PanelOpen)
 	{
 		IsopenPanel = !IsopenPanel;
 		PanelOpen.SetActive(IsopenPanel);
-	}
+	}*/
 }

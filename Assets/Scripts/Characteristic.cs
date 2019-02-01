@@ -3,6 +3,10 @@ using UnityEngine.UI;
 
 public class Characteristic : MonoBehaviour {
 
+    [Header("For Panel Characteristic")]
+    [SerializeField] public static  GameObject _PanelCharacteristic;
+    [SerializeField] private static bool isOpenCharacteristic;
+
     [Header("Text Basic Info")]
     public Text _ClassPlayer;
     public Text _Lvl;
@@ -89,16 +93,15 @@ public class Characteristic : MonoBehaviour {
 
     // Метод для открытия панели характеристик
     //
-    public static bool OpenCharacterist(GameObject PanelCharacterisitc, bool Open)
+    public static void OpenCharacterist()
 	{
-		Open = !Open;
-		PanelCharacterisitc.SetActive(Open);
-		return Open;
-	}
+        isOpenCharacteristic = !isOpenCharacteristic;
+        _PanelCharacteristic.SetActive(isOpenCharacteristic);
+    }
 	
     // Метод для расчета HP MP EXP
     //
-    public float CalculationHpMpExp(float RealNamber, float MaxNamber)
+    public float CalculationHpMpExp(float RealNamber,  float MaxNamber)
     {
         return RealNamber / MaxNamber;
     }
@@ -146,6 +149,12 @@ public class Characteristic : MonoBehaviour {
 
     void Start()
     {
+        // Изночально панель характеристик закрыта
+        //
+        _PanelCharacteristic = GameObject.Find("Characteristic");
+        isOpenCharacteristic = false;
+        _PanelCharacteristic.SetActive(isOpenCharacteristic);
+        Debug.Log( isOpenCharacteristic);
         // Инициализация начальных характеристик персонажа
         //
         ClassPlayer = "Мечник";

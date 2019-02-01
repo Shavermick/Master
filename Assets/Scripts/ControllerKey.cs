@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ControllerKey : MonoBehaviour {
@@ -13,10 +11,6 @@ public class ControllerKey : MonoBehaviour {
     public GameObject _Inventory;
     [SerializeField] private static bool OpenInventor;
 
-    [Header("Характеристики")]
-    public GameObject _Characteristic;
-    [SerializeField] private static bool OpenCharacteristic;
-
     [Header("Скилы")]
     public GameObject _Skill;
     [SerializeField] private static bool OpenSkill;
@@ -26,14 +20,11 @@ public class ControllerKey : MonoBehaviour {
     [SerializeField] private static bool OpenMap;
     void Start ()
     {
-		OpenSystemStatys = true; 
+		OpenSystemStatys = false; 
         _SystemStatys.SetActive(OpenSystemStatys);
 
         OpenInventor = false;
         _Inventory.SetActive(OpenInventor);
-
-        OpenCharacteristic = false;
-        _Characteristic.SetActive(OpenCharacteristic);
 
         OpenSkill = false;
         _Skill.SetActive(OpenSkill);
@@ -47,12 +38,12 @@ public class ControllerKey : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-          OpenInventor = Inventorys.OpenInventory(_Inventory, OpenInventor);
+          OpenInventor = Inventory.OpenInventory(_Inventory, OpenInventor);
         }
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            OpenCharacteristic = Characteristic.OpenCharacterist(_Characteristic,OpenCharacteristic);
+            Characteristic.OpenCharacterist();
         }
 
         if (Input.GetKeyDown(KeyCode.K))
