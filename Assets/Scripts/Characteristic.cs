@@ -4,8 +4,8 @@ using UnityEngine.UI;
 public class Characteristic : MonoBehaviour {
 
     [Header("For Panel Characteristic")]
-    [SerializeField] public static  GameObject _PanelCharacteristic;
-    [SerializeField] private static bool isOpenCharacteristic;
+    [SerializeField] public GameObject _PanelCharacteristic;
+    [SerializeField] private bool isOpenCharacteristic;
 
     [Header("Text Basic Info")]
     public Text _ClassPlayer;
@@ -93,7 +93,7 @@ public class Characteristic : MonoBehaviour {
 
     // Метод для открытия панели характеристик
     //
-    public static void OpenCharacterist()
+    public void OpenCharacterist()
 	{
         isOpenCharacteristic = !isOpenCharacteristic;
         _PanelCharacteristic.SetActive(isOpenCharacteristic);
@@ -146,15 +146,20 @@ public class Characteristic : MonoBehaviour {
         return 0;
     }
 
+    // Метод для закрытия характеристик по крестику
+    //
+    public void XmarForChar()
+    {
+        _PanelCharacteristic.SetActive(false);
+        isOpenCharacteristic = false;
+    }
 
     void Start()
     {
         // Изночально панель характеристик закрыта
         //
-        _PanelCharacteristic = GameObject.Find("Characteristic");
-        isOpenCharacteristic = false;
-        _PanelCharacteristic.SetActive(isOpenCharacteristic);
-        Debug.Log( isOpenCharacteristic);
+
+
         // Инициализация начальных характеристик персонажа
         //
         ClassPlayer = "Мечник";
@@ -209,6 +214,11 @@ public class Characteristic : MonoBehaviour {
         if (RealExp >= NeedExp)
         {
             LvlUp();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            OpenCharacterist();
         }
     }
 }

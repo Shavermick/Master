@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Skills : MonoBehaviour {
@@ -9,7 +7,15 @@ public class Skills : MonoBehaviour {
     public GameObject _PanelSkill;
     [SerializeField] private bool isOpenPanel;
 
+
+    [Header("Очки для изучение скилов")]
+    public Text _LvlPoints;
+    [SerializeField] private byte LvlPointForSkillUp = 0;
+
     [Header("Info for Skill")]
+
+    // Переменные отвечающие за первое умение
+    //
     public Text DescriptionFirstSkill;
     [SerializeField] private byte FirstLvlSkill;
     [SerializeField] private int FirstSkillDamage;
@@ -24,7 +30,10 @@ public class Skills : MonoBehaviour {
     [SerializeField] private byte MaxLvlSecondSkill = 10;
     [SerializeField] private float TimeContinuationsSecondSkill;
     
+    [Space(20)]
 
+    // Переменные отвечающие за третье умение
+    //
     [SerializeField] private byte ThirdLvlSkill;
     
     
@@ -41,6 +50,9 @@ public class Skills : MonoBehaviour {
     public void UpFirstSlill()
     {
         FirstLvlSkill++;
+        RealAndMaxLvlSecondSkill.text = SecondLvlSkill.ToString() + " / " + MaxLvlSecondSkill.ToString();
+        TimeSkillSecond();
+        LvlPointForSkillUp --;
     }
 
     // Метод для понижения уровня первого умения
@@ -48,6 +60,9 @@ public class Skills : MonoBehaviour {
     public void DownFirstSkill()
     {
         FirstLvlSkill--;
+        RealAndMaxLvlSecondSkill.text = SecondLvlSkill.ToString() + " / " + MaxLvlSecondSkill.ToString();
+        TimeSkillSecond();
+        LvlPointForSkillUp ++;
     }
    
     // Изменение урона умения в зависимости от уровня скила
@@ -104,12 +119,16 @@ public class Skills : MonoBehaviour {
         }
     }
 
-    // 
+    // Метод для закрытия панели скилов по крестику
     //
+    public void XMarkForSkill()
+    {
+        isOpenPanel = false;
+        _PanelSkill.SetActive(false);
+    }
 
     void Start()
     {
-
         // Инициализация второго уменя при старте игры
         //
         DescriptionSecondSkill.text = "Баф. Прибавление +20 к скорости передвижения." +
@@ -118,5 +137,14 @@ public class Skills : MonoBehaviour {
 
         isOpenPanel = false;
         _PanelSkill.SetActive(isOpenPanel);
+    }
+
+    void LateUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            isOpenPanel = !isOpenPanel;
+            _PanelSkill.SetActive(isOpenPanel);
+        }
     }
 }

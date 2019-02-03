@@ -2,13 +2,16 @@
 using UnityEngine.UI;
 public class SystemControl : MonoBehaviour {
 
+	// Для системной панели
+	//
 	public GameObject PanelSystemMenu;
-	public Button Xmark;
+	[SerializeField] private bool OpenMenuSystem = false;
 
 	// Метод для закрытия меню
 	//
 	public void ReturnGame()
 	{
+		OpenMenuSystem = false;
 		PanelSystemMenu.SetActive(false);
 	}
 
@@ -55,6 +58,7 @@ public class SystemControl : MonoBehaviour {
 	public void YesExitMenu()
 	{
 		Application.LoadLevel("Menu");
+		OpenMenuSystem = false;
 	}
 
 	// Метод для подтверждения выхода в игру
@@ -69,13 +73,24 @@ public class SystemControl : MonoBehaviour {
 	public void NoExitAll(GameObject ButtonNo)
 	{
 		ButtonNo.SetActive(false);
+		OpenMenuSystem = false;
+	}
+
+
+	void LateUpdate()
+	{
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			OpenMenuSystem = !OpenMenuSystem;
+			PanelSystemMenu.SetActive(OpenMenuSystem);
+		}
 	}
 
 	// Метод для закрытия крестиков
 	//
-	/*public static void CloseXMark(bool IsopenPanel, GameObject PanelOpen)
+	public void CloseXMark()
 	{
-		IsopenPanel = !IsopenPanel;
-		PanelOpen.SetActive(IsopenPanel);
-	}*/
+		OpenMenuSystem = false;
+		PanelSystemMenu.SetActive(false);
+	}
 }
