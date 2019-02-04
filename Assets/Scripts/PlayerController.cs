@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
 	
-	public float walkSpeed = 2;
-	public float runSpeed = 6;
+	public float WalkSpeed = 2;
+    //public float BuffwalkSpeed;
+	public float RunSpeed = 6;
+    //public float BuffRunSpeed;
 	public float jumpHeight = 1;
 	[Range(0,1)]
 	public float airControlProcent;
@@ -41,7 +43,7 @@ public class PlayerController : MonoBehaviour {
 			Jump();
 		}
 
-		float animationSpeedProcent = ((running) ? currentSpeed / runSpeed : currentSpeed / walkSpeed * .5f);
+		float animationSpeedProcent = ((running) ? currentSpeed / RunSpeed : currentSpeed / WalkSpeed * .5f);
 		_animator.SetFloat("speedPercent", animationSpeedProcent, SpeedSmoothTime, Time.deltaTime);
 
 	}
@@ -54,7 +56,7 @@ public class PlayerController : MonoBehaviour {
 			transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targerRotation, ref turnSmoothVelocity, GetModifedSmoothTime(turnSmoothTime));
 		}
 
-		float TargetSpeed = ((running)? runSpeed : walkSpeed) * inputDir.magnitude;
+		float TargetSpeed = ((running)? RunSpeed : WalkSpeed) * inputDir.magnitude;
 		currentSpeed = Mathf.SmoothDamp (currentSpeed, TargetSpeed, ref speedSmoothVelocity, GetModifedSmoothTime(SpeedSmoothTime));
 
 		velocityY +=Time.deltaTime * gravity;
