@@ -7,6 +7,9 @@ public class Characteristic : MonoBehaviour {
     [SerializeField] public GameObject _PanelCharacteristic;
     [SerializeField] private bool isOpenCharacteristic;
 
+    [Header("Skill Point")]
+    [SerializeField] private Skills SP;
+
     [Header("Text Basic Info")]
     public Text _ClassPlayer;
     public Text _Lvl;
@@ -112,7 +115,9 @@ public class Characteristic : MonoBehaviour {
     {
         RealExp -= NeedExp;
         NeedExp += 500;
-        
+
+        SP.lvlPointForSkillUp += 3;
+
         // Увеличение Basic характеристик
         //
         Lvl++;
