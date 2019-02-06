@@ -2,12 +2,32 @@
 using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
-    public static bool OpenInventory(GameObject PanelInventory, bool Open)
+	[Header("Panel Inventory")]
+	// Переменные для инвенторя
+	//
+	public GameObject PanelInventory;
+	[SerializeField] private bool isOpenInventory;
+
+	// Метод для открытия инвенторя
+	//
+	public void OpenInventory()
 	{
-		Open = !Open;
-		PanelInventory.SetActive(Open);
-		return Open;
+		isOpenInventory = !isOpenInventory;
+		PanelInventory.SetActive(isOpenInventory);
 	}
-    
-    
+	
+	void Start()
+	{
+		isOpenInventory = false;
+		PanelInventory.SetActive(isOpenInventory);
+	}
+
+	void LateUpdate()
+	{
+		if (Input.GetKeyDown(KeyCode.I))
+		{
+			OpenInventory();
+		}
+	}
+
 }

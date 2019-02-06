@@ -146,14 +146,6 @@ public class Characteristic : MonoBehaviour {
         return 0;
     }
 
-    // Метод для закрытия характеристик по крестику
-    //
-    public void XmarForChar()
-    {
-        _PanelCharacteristic.SetActive(false);
-        isOpenCharacteristic = false;
-    }
-
     void Start()
     {
         // Изночально панель характеристик закрыта

@@ -119,14 +119,6 @@ public class Skills : MonoBehaviour {
         }
     }
 
-    // Метод для закрытия панели скилов по крестику
-    //
-    public void XMarkForSkill()
-    {
-        isOpenPanel = false;
-        _PanelSkill.SetActive(false);
-    }
-
     void Start()
     {
         // Инициализация второго уменя при старте игры

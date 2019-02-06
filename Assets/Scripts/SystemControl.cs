@@ -5,13 +5,13 @@ public class SystemControl : MonoBehaviour {
 	// Для системной панели
 	//
 	public GameObject PanelSystemMenu;
-	[SerializeField] private bool OpenMenuSystem = false;
+	[SerializeField] private bool isOpenMenuSystem;
 
 	// Метод для закрытия меню
 	//
 	public void ReturnGame()
 	{
-		OpenMenuSystem = false;
+		isOpenMenuSystem = false;
 		PanelSystemMenu.SetActive(false);
 	}
 
@@ -58,7 +58,7 @@ public class SystemControl : MonoBehaviour {
 	public void YesExitMenu()
 	{
 		Application.LoadLevel("Menu");
-		OpenMenuSystem = false;
+		isOpenMenuSystem = false;
 	}
 
 	// Метод для подтверждения выхода в игру
@@ -73,24 +73,28 @@ public class SystemControl : MonoBehaviour {
 	public void NoExitAll(GameObject ButtonNo)
 	{
 		ButtonNo.SetActive(false);
-		OpenMenuSystem = false;
+		isOpenMenuSystem = false;
 	}
 
+	// Метод для открытия панели 
+	//
+	public void OpenSystem()
+	{
+		isOpenMenuSystem = !isOpenMenuSystem;
+		PanelSystemMenu.SetActive(isOpenMenuSystem);
+	}
+	
+	void Start()
+	{
+		isOpenMenuSystem = false;
+		PanelSystemMenu.SetActive(isOpenMenuSystem);
+	}
 
 	void LateUpdate()
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			OpenMenuSystem = !OpenMenuSystem;
-			PanelSystemMenu.SetActive(OpenMenuSystem);
+			OpenSystem();
 		}
-	}
-
-	// Метод для закрытия крестиков
-	//
-	public void CloseXMark()
-	{
-		OpenMenuSystem = false;
-		PanelSystemMenu.SetActive(false);
 	}
 }
