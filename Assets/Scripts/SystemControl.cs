@@ -84,6 +84,12 @@ public class SystemControl : MonoBehaviour {
 		PanelSystemMenu.SetActive(isOpenMenuSystem);
 	}
 	
+	// Метод закрытия панели управления
+	//
+	public void XMarkManagementGame(GameObject PanelConf)
+	{
+		PanelConf.SetActive(false);
+	}
 	void Start()
 	{
 		isOpenMenuSystem = false;
