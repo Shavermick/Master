@@ -35,6 +35,7 @@ public class Characteristic : MonoBehaviour {
     public Image _ExpBar;
 
     public Text _NamePlayer;
+    public Text _LvlInfo;
 
     [SerializeField] private string NamePlayer;
     [SerializeField] private float NeedExp;
@@ -121,6 +122,7 @@ public class Characteristic : MonoBehaviour {
         // Увеличение Basic характеристик
         //
         Lvl++;
+        _LvlInfo.text = Lvl.ToString();
         MaxHP++;
         MaxMp++;
 
@@ -182,6 +184,8 @@ public class Characteristic : MonoBehaviour {
         RealMp = MaxMp;
 
         NeedExp = 1000;
+
+        _LvlInfo.text = Lvl.ToString();
     }
 
     void LateUpdate()
