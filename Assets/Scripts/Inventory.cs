@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
 	public GameObject PanelInventory;
 	[SerializeField] private bool isOpenInventory;
 
+
 	// Метод для открытия инвенторя
 	//
 	public void OpenInventory()
