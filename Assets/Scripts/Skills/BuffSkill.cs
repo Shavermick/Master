@@ -12,5 +12,10 @@ public class BuffSkill : ScriptableObject
 
     public float durationSkill;
 
+    public int nextLvlUP;
+    public int manaConst;
+
+    public int Effect;
+
     public Sprite imageSkill;
 }

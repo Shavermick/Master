@@ -3,60 +3,149 @@ using UnityEngine.UI;
 
 public class Skills : MonoBehaviour {
 
+    public Characteristic attackCharacteristic;
+
+    public Image PassiveSkill;
+
     [Header("For visible panel skill")]
     public GameObject _PanelSkill;
+    public Text descriptionSkill;
     [SerializeField] private bool isOpenPanel;
 
+    [Header("Info about SP")]
+    public Text glassesSP;
+    public int SP;
 
-    [Header("Очки для изучение скилов")]
-    public Text _LvlPoints;
-    [SerializeField] private byte LvlPointForSkillUp = 0;
+    [Header("Место для скилов")]
+    public AttackSkill attackSkill;
+    public BuffSkill buffSkill;
+    public PassiveSkill passiveSkill;
 
-    [Header("Info for Skill")]
+    public float NewWalkSpeed;
+    public float NewRunSpeed;
 
-    // Переменные отвечающие за первое умение
-    //
-    public Text DescriptionFirstSkill;
-    public Text LvlAndMaxLvlFirstSkill;
-    [SerializeField] private byte FirstLvlSkill = 0;
-    [SerializeField] private byte MaxLvlFirstSkill;
-    [SerializeField] private int FirstSkillDamage;
-
-
-    [Space(20)]
-
-    // Переменные отвечающие за второе умение
-    //
-    public Text DescriptionSecondSkill;
-    public Text RealAndMaxLvlSecondSkill;
-    [SerializeField] private byte SecondLvlSkill = 0;
-    [SerializeField] private byte MaxLvlSecondSkill = 10;
-    [SerializeField] private float TimeContinuationsSecondSkill;
-
-    [Space(20)]
-
-    // Переменные отвечающие за третье умение
-    //
-    [SerializeField] private byte ThirdLvlSkill;
-
-    // Свойство для получения и проверки Skill Point
-    //
-    public byte lvlPointForSkillUp
+    public bool isSPNotNull(int sp)
     {
-        get { return LvlPointForSkillUp; }
-        set
+        if (sp !=0)
         {
-            if (LvlPointForSkillUp < 0)
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    #region Прокачка первого умения
+
+    public void UplvlSkillFist ()
+    {
+        bool isNotNull;
+        if (isNotNull = isSPNotNull(SP) && attackSkill.realLvl != attackSkill.maxLvl && attackCharacteristic.Lvl >= attackSkill.nextLvlUP)
+        {
+            attackSkill.realLvl++;
+            SP--;
+            attackSkill.nextLvlUP += 2;
+            attackSkill.Attack += 200;
+            attackSkill.manaConst += 150;
+        }
+    }
+
+    public void DownLvlSkillFirst()
+    {
+        if (attackSkill.realLvl != 0)
+        {
+            SP++;
+            attackSkill.realLvl--;
+            attackSkill.nextLvlUP -= 2;
+            attackSkill.Attack -= 200;
+            attackSkill.manaConst -= 150;
+        }
+    }
+    #endregion
+
+    #region Прокачка второго умения
+
+    public void UpLvlSkillSecond()
+    {
+        bool isNotNull;
+        if (isNotNull = isSPNotNull(SP) && buffSkill.realLvl != buffSkill.maxLvl && attackCharacteristic.Lvl >= buffSkill.nextLvlUP)
+        {
+            buffSkill.realLvl++;
+            SP--;
+            buffSkill.durationSkill += 3;
+            buffSkill.Coldown -= 5;
+
+            buffSkill.nextLvlUP += 2;
+
+            buffSkill.Effect += 3;
+
+            buffSkill.manaConst += 60;
+
+            NewRunSpeed = 10 + buffSkill.Effect;
+            NewWalkSpeed = 5 + buffSkill.Effect;
+        }
+    }
+
+    public void DonwlvlSkillSecond()
+    {
+        if (buffSkill.realLvl != 0)
+        {
+            SP++;
+            buffSkill.realLvl--;
+            buffSkill.durationSkill -= 3;
+            buffSkill.Coldown += 5;
+
+            buffSkill.nextLvlUP -= 2;
+
+            buffSkill.Effect -= 3;
+
+            buffSkill.manaConst -= 60;
+        }
+    }
+    #endregion
+
+    #region Прокачка третьего умения
+
+    public void UplvlSkillThird()
+    {
+        bool isNotNull;
+        if (isNotNull = isSPNotNull(SP) && passiveSkill.realLvl != passiveSkill.maxLvl && attackCharacteristic.Lvl >= passiveSkill.nextLvlUP)
+        {
+            passiveSkill.realLvl++;
+            SP--;
+            passiveSkill.Effect +=3;
+
+            attackCharacteristic.MinPhysicalAttack += Mathf.Round((attackCharacteristic.MinPhysicalAttack * passiveSkill.Effect) / 100);
+            attackCharacteristic.MaxPhysicalAttack += Mathf.Round((attackCharacteristic.MaxPhysicalAttack * passiveSkill.Effect) / 100);
+
+            PassiveSkill.gameObject.SetActive(true);
+
+            passiveSkill.nextLvlUP += 3;
+        }
+    }
+
+    public void DonwlvlSkillThird()
+    {
+        if (passiveSkill.realLvl != 0)
+        {
+            SP++;
+            passiveSkill.realLvl--;
+            passiveSkill.Effect -= 3;
+
+            attackCharacteristic.MinPhysicalAttack -= attackCharacteristic.MinPhysicalAttack - Mathf.Round((attackCharacteristic.MinPhysicalAttack * 100) / (100 + passiveSkill.Effect));
+            attackCharacteristic.MaxPhysicalAttack -= attackCharacteristic.MaxPhysicalAttack - Mathf.Round((attackCharacteristic.MaxPhysicalAttack * 100) / (100 + passiveSkill.Effect));
+
+            passiveSkill.nextLvlUP -= 3;
+
+            if (passiveSkill.realLvl == 0)
             {
-                LvlPointForSkillUp = 0;
-            }
-            else
-            {
-                LvlPointForSkillUp = value;
+                PassiveSkill.gameObject.SetActive(false);
             }
         }
     }
 
+    #endregion
     // Метод для открытия панели скилов
     //
     public void OpenPanelSkill()
@@ -65,159 +154,25 @@ public class Skills : MonoBehaviour {
         _PanelSkill.SetActive(isOpenPanel);
     }
 
-    // Метод для повышение уровня первого умения
-    //
-    public void UpFirstSkill()
-    {
-        if (LvlPointForSkillUp != 0)
-        {
-            lvlPointForSkillUp--;
-            DamageSkillFirst();
-        }
-    }
-
-    // Метод для понижение уровня перого умения
-    //
-    public void DownFirstSkill()
-    {
-        if (FirstLvlSkill != 0)
-        {
-            lvlPointForSkillUp++;
-            DamageSkillFirst();
-        }
-    }
-    // Метод для повышение уровня второго умения
-    //
-    public void UpSecondSkill()
-    {
-        if (LvlPointForSkillUp != 0)
-        {
-            SecondLvlSkill++;
-            RealAndMaxLvlSecondSkill.text = SecondLvlSkill.ToString() + " / " + MaxLvlSecondSkill.ToString();
-            TimeSkillSecond();
-            lvlPointForSkillUp--;
-        }
-    }
-
-    // Метод для понижения уровня второго умения
-    //
-    public void DownSecondSkill()
-    {
-        if (SecondLvlSkill != 0)
-        { 
-            SecondLvlSkill--;
-            RealAndMaxLvlSecondSkill.text = SecondLvlSkill.ToString() + " / " + MaxLvlSecondSkill.ToString();
-            TimeSkillSecond();
-            lvlPointForSkillUp++;
-        }
-    }
-   
-    // Изменение урона умения в зависимости от уровня скила
-    //
-    public void DamageSkillFirst()
-    {
-        switch(FirstLvlSkill)
-        {
-            case 1:
-
-                break;
-            case 2:
-
-                break;
-        } 
-    }
-
-    // Метод для изменение времени продолжительности умения 
-    //
-    public void TimeSkillSecond()
-    {
-        switch (SecondLvlSkill)
-        {
-            case 1:
-                TimeContinuationsSecondSkill = 10f;
-                DescriptionSecondSkill.text = "Баф. Прибавление +20 к скорости передвижения." +
-                " Длительность эффекта " + TimeContinuationsSecondSkill.ToString() + " сек";
-                RealAndMaxLvlSecondSkill.text = SecondLvlSkill.ToString() + " / " + MaxLvlSecondSkill.ToString();
-                break;
-            case 2:
-                TimeContinuationsSecondSkill = 12f;
-                DescriptionSecondSkill.text = "Баф. Прибавление +20 к скорости передвижения." +
-                " Длительность эффекта " + TimeContinuationsSecondSkill.ToString() + " сек";
-                RealAndMaxLvlSecondSkill.text = SecondLvlSkill.ToString() + " / " + MaxLvlSecondSkill.ToString();
-                break;
-            case 3:
-                TimeContinuationsSecondSkill = 14f;
-                DescriptionSecondSkill.text = "Баф. Прибавление +20 к скорости передвижения." +
-                " Длительность эффекта " + TimeContinuationsSecondSkill.ToString() + " сек";
-                RealAndMaxLvlSecondSkill.text = SecondLvlSkill.ToString() + " / " + MaxLvlSecondSkill.ToString();
-                break;
-            case 4:
-                TimeContinuationsSecondSkill = 16f;
-                DescriptionSecondSkill.text = "Баф. Прибавление +20 к скорости передвижения." +
-                " Длительность эффекта " + TimeContinuationsSecondSkill.ToString() + " сек";
-                RealAndMaxLvlSecondSkill.text = SecondLvlSkill.ToString() + " / " + MaxLvlSecondSkill.ToString();
-                break;
-            case 5:
-                TimeContinuationsSecondSkill = 18f;
-                DescriptionSecondSkill.text = "Баф. Прибавление +20 к скорости передвижения." +
-                " Длительность эффекта " + TimeContinuationsSecondSkill.ToString() + " сек";
-                RealAndMaxLvlSecondSkill.text = SecondLvlSkill.ToString() + " / " + MaxLvlSecondSkill.ToString();
-                break;
-            case 6:
-                TimeContinuationsSecondSkill = 20f;
-                DescriptionSecondSkill.text = "Баф. Прибавление +20 к скорости передвижения." +
-                " Длительность эффекта " + TimeContinuationsSecondSkill.ToString() + " сек";
-                RealAndMaxLvlSecondSkill.text = SecondLvlSkill.ToString() + " / " + MaxLvlSecondSkill.ToString();
-                break;
-            case 7:
-                TimeContinuationsSecondSkill = 22f;
-                DescriptionSecondSkill.text = "Баф. Прибавление +20 к скорости передвижения." +
-                " Длительность эффекта " + TimeContinuationsSecondSkill.ToString() + " сек";
-                RealAndMaxLvlSecondSkill.text = SecondLvlSkill.ToString() + " / " + MaxLvlSecondSkill.ToString();
-                break;
-            case 8:
-                TimeContinuationsSecondSkill = 24f;
-                DescriptionSecondSkill.text = "Баф. Прибавление +20 к скорости передвижения." +
-                " Длительность эффекта " + TimeContinuationsSecondSkill.ToString() + " сек";
-                RealAndMaxLvlSecondSkill.text = SecondLvlSkill.ToString() + " / " + MaxLvlSecondSkill.ToString();
-                break;
-            case 9:
-                TimeContinuationsSecondSkill = 26f;
-                DescriptionSecondSkill.text = "Баф. Прибавление +20 к скорости передвижения." +
-                " Длительность эффекта " + TimeContinuationsSecondSkill.ToString() + " сек";
-                RealAndMaxLvlSecondSkill.text = SecondLvlSkill.ToString() + " / " + MaxLvlSecondSkill.ToString();
-                break;
-            case 10:
-                TimeContinuationsSecondSkill = 28f;
-                DescriptionSecondSkill.text = "Баф. Прибавление +20 к скорости передвижения." +
-                " Длительность эффекта " + TimeContinuationsSecondSkill.ToString() + " сек";
-                RealAndMaxLvlSecondSkill.text = SecondLvlSkill.ToString() + " / " + MaxLvlSecondSkill.ToString();
-                break;
-        }
-    }
-
     void Start()
     {
-        // Инициализация второго уменя при старте игры
-        //
-        DescriptionSecondSkill.text = "Баф. Прибавление +20 к скорости передвижения." +
-        " Длительность эффекта " + TimeContinuationsSecondSkill.ToString() + " сек";
-        RealAndMaxLvlSecondSkill.text = SecondLvlSkill.ToString() + " / " + MaxLvlSecondSkill.ToString();
-
         // Изначально панель закрыта 
         //
         isOpenPanel = false;
         _PanelSkill.SetActive(isOpenPanel);
+        SP = 3;
+
+        PassiveSkill.gameObject.SetActive(false);
     }
 
     void LateUpdate()
     {
+        glassesSP.text = SP.ToString();
         if (Input.GetKeyDown(KeyCode.K))
         {
             isOpenPanel = !isOpenPanel;
             _PanelSkill.SetActive(isOpenPanel);
+            descriptionSkill.text = "";
         }
-
-        _LvlPoints.text = lvlPointForSkillUp.ToString();
     }
 }

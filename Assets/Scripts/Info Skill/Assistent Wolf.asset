@@ -11,11 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ede0476198a4341a8565bc72d9d356, type: 3}
   m_Name: Assistent Wolf
   m_EditorClassIdentifier: 
-  descriptionSkill: "\u041F\u0440\u0438\u0437\u044B\u0432\u0430\u0435\u0442 \u0432\u043E\u043B\u043A\u0430
-    \u043F\u043E\u043C\u043E\u0449\u043D\u0438\u043A\u0430"
+  descriptionSkill: "\u041F\u0440\u0438\u0437\u044B\u0432\u0430\u0435\u0442 \u043F\u043E\u043C\u043E\u0449\u043D\u0438\u043A\u0430"
   nameSkill: "\u041F\u0440\u0438\u0437\u044B\u0432 \u0432\u043E\u043B\u043A\u0430"
   maxLvl: 5
   realLvl: 0
   Coldown: 60
   Attack: 500
+  nextLvlUP: 1
+  manaConst: 50
   imageSkill: {fileID: 21300000, guid: 7bede916db697404db55818f2d78878f, type: 3}

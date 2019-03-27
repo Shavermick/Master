@@ -8,7 +8,7 @@ public class Characteristic : MonoBehaviour {
     [SerializeField] private bool isOpenCharacteristic;
 
     [Header("Skill Point")]
-    [SerializeField] private Skills SP;
+    [SerializeField] private Skills sP;
 
     [Header("Text Basic Info")]
     public Text _ClassPlayer;
@@ -43,12 +43,12 @@ public class Characteristic : MonoBehaviour {
 
     [Header("Basic Info")]
 
+    public int Lvl;
     [SerializeField] private string ClassPlayer;
-    [SerializeField] private int Lvl;
     [SerializeField] private float MaxHP;
-    [SerializeField] private float RealHp;
+    public float RealHp;
     [SerializeField] private float MaxMp;
-    [SerializeField] private float RealMp;
+    public float RealMp;
 
     [Header("Basic Characteristic")]
 
@@ -59,10 +59,10 @@ public class Characteristic : MonoBehaviour {
 
     [Header("Characteristic Attack and Def")]
 
-    [SerializeField] private int MinPhysicalAttack;
-    [SerializeField] private int MaxPhysicalAttack;
-    [SerializeField] private int MinMagicAttack;
-    [SerializeField] private int MaxMagicAttack;
+    public float MinPhysicalAttack;
+    public float MaxPhysicalAttack;
+    public float MinMagicAttack;
+    public float MaxMagicAttack;
     [SerializeField] private int PhysicalDef;
     [SerializeField] private int MagicDef;
 
@@ -117,40 +117,42 @@ public class Characteristic : MonoBehaviour {
         RealExp -= NeedExp;
         NeedExp += 500;
 
-        SP.lvlPointForSkillUp += 3;
+        sP.SP += 3;
 
         // Увеличение Basic характеристик
         //
         Lvl++;
         _LvlInfo.text = Lvl.ToString();
-        MaxHP++;
-        MaxMp++;
+        MaxHP += 500;
+        MaxMp += 500;
+        RealHp = MaxHP;
+        RealMp = MaxMp;
 
-        Strength++;
-        Agiliy++;
-        Intelligence++;
-        Vitality++;
+        Strength += 5;
+        Agiliy += 5;
+        Intelligence += 5;
+        Vitality += 5;
 
         // Увеличение Attck и Def характеристик
         //
-        MinPhysicalAttack = PhysiclAttck(MinPhysicalAttack, Strength, Agiliy); //
-        MaxPhysicalAttack = PhysiclAttck(MaxPhysicalAttack, Strength, Agiliy); // Обращение к методам для расчета
-        MinMagicAttack = MagicAttack(MinMagicAttack, Intelligence); // атаки в зависимости от Basic характеристик
-        MaxMagicAttack = MagicAttack(MaxMagicAttack, Intelligence); //
-        PhysicalDef++;
-        MagicDef++;
+        MinPhysicalAttack += PhysiclAttck(MinPhysicalAttack, Strength, Agiliy); //
+        MaxPhysicalAttack += PhysiclAttck(MaxPhysicalAttack, Strength, Agiliy); // Обращение к методам для расчета
+        MinMagicAttack += MagicAttack(MinMagicAttack, Intelligence); // атаки в зависимости от Basic характеристик
+        MaxMagicAttack += MagicAttack(MaxMagicAttack, Intelligence); //
+        PhysicalDef += 50;
+        MagicDef += 50;
     }
 
     // Методы для расчета атаки в зависимости от добавленных характеристик
     //
-    public int PhysiclAttck(int PhysicAttack, int Str, int Agl)
+    public int PhysiclAttck(float PhysicAttack, int Str, int Agl)
     {
-        return 0;
+        return (int)Mathf.Round((PhysicAttack * Str) / Agl);
     }
 
-    public int MagicAttack(int MagicAttack, int Int)
+    public int MagicAttack(float MagicAttack, int Int)
     {
-        return 0;
+        return (int)Mathf.Round((MagicAttack * Int) / 25f);
     }
 
     void Start()
@@ -190,6 +192,19 @@ public class Characteristic : MonoBehaviour {
 
     void LateUpdate()
     {
+
+        if (RealMp != MaxMp)
+        {
+            float regenerate = Mathf.Floor((1 * Time.deltaTime)* 100);
+
+            RealMp += regenerate;
+
+            if (RealMp >= MaxMp)
+            {
+                RealHp = MaxMp;
+            }
+        }
+
         // Заполнение характеристик
         //
         _Lvl.text = Lvl.ToString();

@@ -11,5 +11,9 @@ public class AttackSkill : ScriptableObject
     public int Coldown;
 
     public int Attack;
+
+    public int nextLvlUP;
+    public int manaConst;
+
     public Sprite imageSkill;
 }
