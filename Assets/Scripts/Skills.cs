@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class Skills : MonoBehaviour {
 
+    public Cursore cursore;
+
     public Characteristic attackCharacteristic;
 
     public Image PassiveSkill;
@@ -152,6 +154,8 @@ public class Skills : MonoBehaviour {
     {
         isOpenPanel = !isOpenPanel;
         _PanelSkill.SetActive(isOpenPanel);
+
+        cursore.isVisibleCursore(isOpenPanel);
     }
 
     void Start()
@@ -170,8 +174,7 @@ public class Skills : MonoBehaviour {
         glassesSP.text = SP.ToString();
         if (Input.GetKeyDown(KeyCode.K))
         {
-            isOpenPanel = !isOpenPanel;
-            _PanelSkill.SetActive(isOpenPanel);
+            OpenPanelSkill();
             descriptionSkill.text = "";
         }
     }

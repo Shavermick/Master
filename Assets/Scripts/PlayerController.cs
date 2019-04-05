@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-	
+    public Inventory addItem;
+
+    public LayerMask mask;
+    Camera cam;
+
 	public float WalkSpeed = 2;
-    //public float BuffwalkSpeed;
 	public float RunSpeed = 6;
-    //public float BuffRunSpeed;
 	public float jumpHeight = 1;
 	[Range(0,1)]
 	public float airControlProcent;
@@ -26,6 +28,9 @@ public class PlayerController : MonoBehaviour {
 	CharacterController _controller;
 
 	void Start () {
+
+        cam = Camera.main;
+
 		_animator = LinkForAnimation.GetComponent<Animator>();
 		cameraT = Camera.main.transform;
 		_controller = GetComponent<CharacterController>();
@@ -45,6 +50,23 @@ public class PlayerController : MonoBehaviour {
 
 		float animationSpeedProcent = ((running) ? currentSpeed / RunSpeed : currentSpeed / WalkSpeed * .5f);
 		_animator.SetFloat("speedPercent", animationSpeedProcent, SpeedSmoothTime, Time.deltaTime);
+
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            bool hits = Physics.Raycast(ray, out hit, 100, mask);
+            if (hits)
+            {
+                Debug.Log("Enter");
+                
+                var TestItem = hit.collider.GetComponent<TakeItem>().item;
+                addItem.Add(TestItem);
+               // Destroy(gameObject);
+            }
+        }
+
 
 	}
 

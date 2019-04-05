@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class Characteristic : MonoBehaviour {
 
+    public Cursore cursore;
+
     [Header("For Panel Characteristic")]
     [SerializeField] public GameObject _PanelCharacteristic;
     [SerializeField] private bool isOpenCharacteristic;
@@ -101,6 +103,8 @@ public class Characteristic : MonoBehaviour {
 	{
         isOpenCharacteristic = !isOpenCharacteristic;
         _PanelCharacteristic.SetActive(isOpenCharacteristic);
+
+        cursore.isVisibleCursore(isOpenCharacteristic);
     }
 	
     // Метод для расчета HP MP EXP
