@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class cameraController : MonoBehaviour {
-	
-	public bool lockCursor;
+
+    public Cursore cursore;
 	public float mouseSensutuvuty = 20;
 	public Transform target;
 	public float dstFromTarget = 2;
@@ -20,20 +20,22 @@ public class cameraController : MonoBehaviour {
 
 	void Start()
 	{
-			//Cursor.lockState = CursorLockMode.Locked;
-			//Cursor.visible = false;
+
 	}
 
 	// Update is called once per frame
 	void LateUpdate ()
     {
-		yaw += Input.GetAxis("Mouse X") * mouseSensutuvuty;
-		pitch -=Input.GetAxis("Mouse Y") * mouseSensutuvuty;
-		pitch = Mathf.Clamp(pitch,pitchMinMax.x, pitchMinMax.y);
+        if (!cursore.isVisible)
+        {
+            yaw += Input.GetAxis("Mouse X") * mouseSensutuvuty;
+            pitch -= Input.GetAxis("Mouse Y") * mouseSensutuvuty;
+            pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
 
-		currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch,yaw), ref rotationSmoothVelocity, rotationSmoothTime);
-		transform.eulerAngles = currentRotation;
-		
-		transform.position = target.position - transform.forward * dstFromTarget;
-	}
+            currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, rotationSmoothTime);
+            transform.eulerAngles = currentRotation;
+
+            transform.position = target.position - transform.forward * dstFromTarget;
+        }
+    }
 }

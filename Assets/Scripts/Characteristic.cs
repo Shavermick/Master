@@ -41,7 +41,7 @@ public class Characteristic : MonoBehaviour {
 
     [SerializeField] private string NamePlayer;
     [SerializeField] private float NeedExp;
-    [SerializeField] private float RealExp;
+    public float RealExp;
 
     [Header("Basic Info")]
 
@@ -197,7 +197,7 @@ public class Characteristic : MonoBehaviour {
     void LateUpdate()
     {
 
-        if (RealMp != MaxMp)
+        if (RealMp <= MaxMp)
         {
             float regenerate = Mathf.Floor((1 * Time.deltaTime)* 100);
 

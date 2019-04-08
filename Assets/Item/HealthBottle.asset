@@ -11,8 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa6065315021a043b4ac04008e983da, type: 3}
   m_Name: HealthBottle
   m_EditorClassIdentifier: 
-  id: 0
   NameItem: "\u0411\u0430\u043D\u043A\u0430 \u0441 \u0437\u0435\u043B\u044C\u0435\u043C
     \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F"
-  icon: {fileID: 0}
-  isDefaultItem: 0
+  icon: {fileID: 21300000, guid: b502c5bea0b5f6f48b30c381926f3798, type: 3}
+  GiveItem: 250

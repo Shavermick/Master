@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cursore : MonoBehaviour {
 
-    [SerializeField] private bool isVisible;
+    public bool isVisible;
     [SerializeField] private int kolOpenPanel;
 	// Use this for initialization
 	void Start () {
@@ -13,17 +13,9 @@ public class Cursore : MonoBehaviour {
         Cursor.visible = isVisible;
 
 	}
-	
-    public bool isVisibleCursore()
-    {
-
-        return true;
-    }
 
     public void isVisibleCursore(bool openBool)
     {
-        
-
         if (openBool)
         {
             isVisible = true;
@@ -39,8 +31,6 @@ public class Cursore : MonoBehaviour {
                 Cursor.visible = isVisible;
             }
         }
-
-        Debug.Log(kolOpenPanel);
     }
     // Update is called once per frame
     void Update () {
