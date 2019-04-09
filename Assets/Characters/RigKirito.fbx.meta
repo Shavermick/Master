@@ -1,0 +1,645 @@
+fileFormatVersion: 2
+guid: 36649eef5dc2a70458046c4e3f166e16
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Chest
+    100002: Finger01.L
+    100004: Finger01.R
+    100006: Finger02.L
+    100008: Finger02.R
+    100010: Foot.L
+    100012: Foot.R
+    100014: Hand Hold.R
+    100016: Hand.L
+    100018: Hand.R
+    100020: Head
+    100022: Hips
+    100024: Kirito_def_001
+    100026: Lower Arm.L
+    100028: Lower Arm.R
+    100030: Lower Leg.L
+    100032: Lower Leg.R
+    100034: Neck
+    100036: //RootNode
+    100038: Shoulder.L
+    100040: Shoulder.R
+    100042: Spaine
+    100044: Sword
+    100046: Thumbo01.L
+    100048: Thumbo01.R
+    100050: Thumbo02.L
+    100052: Thumbo02.R
+    100054: Toes.L
+    100056: Toes.R
+    100058: Uppa Arm.L
+    100060: Uppa Arm.R
+    100062: Upper Leg.L
+    100064: Upper Leg.R
+    100066: "\u0421\u043A\u0435\u043B\u0435\u0442"
+    400000: Chest
+    400002: Finger01.L
+    400004: Finger01.R
+    400006: Finger02.L
+    400008: Finger02.R
+    400010: Foot.L
+    400012: Foot.R
+    400014: Hand Hold.R
+    400016: Hand.L
+    400018: Hand.R
+    400020: Head
+    400022: Hips
+    400024: Kirito_def_001
+    400026: Lower Arm.L
+    400028: Lower Arm.R
+    400030: Lower Leg.L
+    400032: Lower Leg.R
+    400034: Neck
+    400036: //RootNode
+    400038: Shoulder.L
+    400040: Shoulder.R
+    400042: Spaine
+    400044: Sword
+    400046: Thumbo01.L
+    400048: Thumbo01.R
+    400050: Thumbo02.L
+    400052: Thumbo02.R
+    400054: Toes.L
+    400056: Toes.R
+    400058: Uppa Arm.L
+    400060: Uppa Arm.R
+    400062: Upper Leg.L
+    400064: Upper Leg.R
+    400066: "\u0421\u043A\u0435\u043B\u0435\u0442"
+    2100000: aiStandardSurface2
+    2100002: aiStandardSurface1
+    2100004: aiStandardSurface3
+    2100006: Kirito_def_arms_png
+    2100008: Kirito_def_body_png
+    2100010: Kirito_def_legs_png
+    2100012: Kirito_hair_png
+    2100014: Kirito_face_png
+    2300000: Sword
+    3300000: Sword
+    4300000: Sword
+    4300002: Kirito_def_001
+    7400000: "\u0421\u043A\u0435\u043B\u0435\u0442|Attack"
+    7400002: "\u0421\u043A\u0435\u043B\u0435\u0442|EndAttack"
+    7400004: "\u0421\u043A\u0435\u043B\u0435\u0442|EndAttack.001"
+    7400006: "\u0421\u043A\u0435\u043B\u0435\u0442|Idle"
+    7400008: "\u0421\u043A\u0435\u043B\u0435\u0442|IdleAttack"
+    7400010: "\u0421\u043A\u0435\u043B\u0435\u0442|OpAttack"
+    7400012: "\u0421\u043A\u0435\u043B\u0435\u0442|run"
+    7400014: "\u0421\u043A\u0435\u043B\u0435\u0442|SwordAction"
+    7400016: "\u0421\u043A\u0435\u043B\u0435\u0442|wolk"
+    7400018: "\u0421\u043A\u0435\u043B\u0435\u0442|wolkAttack"
+    7400020: "\u0421\u043A\u0435\u043B\u0435\u0442|\u0421\u043A\u0435\u043B\u0435\u0442Action"
+    7400022: "\u0421\u043A\u0435\u043B\u0435\u0442|\u0421\u043A\u0435\u043B\u0435\u0442Action.001"
+    7400024: Sword|SwordAction
+    7400026: "Sword|\u0421\u043A\u0435\u043B\u0435\u0442Action"
+    7400028: "Sword|\u0421\u043A\u0435\u043B\u0435\u0442Action.001"
+    9500000: //RootNode
+    13700000: Kirito_def_001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kirito_def_arms_png
+    second: {fileID: 2100000, guid: 4cee4ff7cceff9a439a6f4f90a31f8ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kirito_def_body_png
+    second: {fileID: 2100000, guid: 894d68d6d997a754da8e4735277c6e77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kirito_def_legs_png
+    second: {fileID: 2100000, guid: ee4b2ceb36ddf004386692456857b23a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kirito_face_png
+    second: {fileID: 2100000, guid: 0dd36da02d4efe845bc789c049e665c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kirito_hair_png
+    second: {fileID: 2100000, guid: 008d81c053c9efc4da9e18297727a155, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aiStandardSurface1
+    second: {fileID: 2100000, guid: 3a420a8e3cc3c8d47b6b4e98beedf04a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aiStandardSurface2
+    second: {fileID: 2100000, guid: 92069214568c23441b861bd0afc7624c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aiStandardSurface3
+    second: {fileID: 2100002, guid: faa3a88e90e4893439bcc237f775ec7c, type: 3}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: "\u0421\u043A\u0435\u043B\u0435\u0442|Attack"
+      takeName: "\u0421\u043A\u0435\u043B\u0435\u0442|Attack"
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "\u0421\u043A\u0435\u043B\u0435\u0442|EndAttack"
+      takeName: "\u0421\u043A\u0435\u043B\u0435\u0442|EndAttack"
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "\u0421\u043A\u0435\u043B\u0435\u0442|EndAttack.001"
+      takeName: "\u0421\u043A\u0435\u043B\u0435\u0442|EndAttack.001"
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "\u0421\u043A\u0435\u043B\u0435\u0442|Idle"
+      takeName: "\u0421\u043A\u0435\u043B\u0435\u0442|Idle"
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "\u0421\u043A\u0435\u043B\u0435\u0442|IdleAttack"
+      takeName: "\u0421\u043A\u0435\u043B\u0435\u0442|IdleAttack"
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "\u0421\u043A\u0435\u043B\u0435\u0442|OpAttack"
+      takeName: "\u0421\u043A\u0435\u043B\u0435\u0442|OpAttack"
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "\u0421\u043A\u0435\u043B\u0435\u0442|run"
+      takeName: "\u0421\u043A\u0435\u043B\u0435\u0442|run"
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "\u0421\u043A\u0435\u043B\u0435\u0442|SwordAction"
+      takeName: "\u0421\u043A\u0435\u043B\u0435\u0442|SwordAction"
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "\u0421\u043A\u0435\u043B\u0435\u0442|wolk"
+      takeName: "\u0421\u043A\u0435\u043B\u0435\u0442|wolk"
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "\u0421\u043A\u0435\u043B\u0435\u0442|wolkAttack"
+      takeName: "\u0421\u043A\u0435\u043B\u0435\u0442|wolkAttack"
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "\u0421\u043A\u0435\u043B\u0435\u0442|\u0421\u043A\u0435\u043B\u0435\u0442Action"
+      takeName: "\u0421\u043A\u0435\u043B\u0435\u0442|\u0421\u043A\u0435\u043B\u0435\u0442Action"
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "\u0421\u043A\u0435\u043B\u0435\u0442|\u0421\u043A\u0435\u043B\u0435\u0442Action.001"
+      takeName: "\u0421\u043A\u0435\u043B\u0435\u0442|\u0421\u043A\u0435\u043B\u0435\u0442Action.001"
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Sword|SwordAction
+      takeName: Sword|SwordAction
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "Sword|\u0421\u043A\u0435\u043B\u0435\u0442Action"
+      takeName: "Sword|\u0421\u043A\u0435\u043B\u0435\u0442Action"
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "Sword|\u0421\u043A\u0435\u043B\u0435\u0442Action.001"
+      takeName: "Sword|\u0421\u043A\u0435\u043B\u0435\u0442Action.001"
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

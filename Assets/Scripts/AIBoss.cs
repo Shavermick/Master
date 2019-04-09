@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
+
 public class AIBoss : MonoBehaviour {
 
     public string nameSpawn;
@@ -69,7 +68,7 @@ public class AIBoss : MonoBehaviour {
             if (Vector3.Distance(transform.position, playerTransform.transform.position) >= 10)
             {
                 agent.stoppingDistance = 5;
-            }
+            }            
         }
         else if (!playerEnter && !spawnEnter) 
         {
@@ -86,8 +85,8 @@ public class AIBoss : MonoBehaviour {
 
         if (spawnEnter)
         {
+            int Attack = Random.Range(minAttack, maxAttack + 1);
             animator.Play("stand");
         }
-
     }
 }
