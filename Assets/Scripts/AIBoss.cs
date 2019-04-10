@@ -44,7 +44,7 @@ public class AIBoss : MonoBehaviour {
         
         realHP = maxHP;
 
-        playerTransform = GameObject.Find("Kirito_def");
+        playerTransform = GameObject.Find("RigKirito");
 
         spawnBoss = GameObject.Find(nameSpawn);
 

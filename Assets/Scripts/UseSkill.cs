@@ -16,7 +16,7 @@ public class UseSkill : MonoBehaviour {
     public Skills useSkill;
 
     public Characteristic attack;
-    public PlayerController controller;
+    public NewController controller;
 
     public GameObject pref;
     public GameObject Assistent;
@@ -102,8 +102,8 @@ public class UseSkill : MonoBehaviour {
         // Использование второго умения
         if (IttaShura)
         {
-            controller.WalkSpeed = useSkill.NewWalkSpeed;
-            controller.RunSpeed = useSkill.NewRunSpeed;
+            controller.walkSpeed = useSkill.NewWalkSpeed;
+            controller.runSpeed = useSkill.NewRunSpeed;
             effectItta -= 1 * Time.deltaTime;
 
             Debug.Log(effectItta);
@@ -114,8 +114,8 @@ public class UseSkill : MonoBehaviour {
         if (effectItta <= 0)
         {
             IttaShura = false;
-            controller.WalkSpeed = 5;
-            controller.RunSpeed = 10;
+            controller.walkSpeed = 5;
+            controller.runSpeed = 10;
             coldownShura -= 1 * Time.deltaTime;
             ColdownIttaShura = true;
             timeBuff.text = Mathf.Floor(coldownShura).ToString();

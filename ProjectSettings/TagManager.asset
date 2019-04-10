@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Badges
   - assistent
+  - Mob
   layers:
   - Default
   - TransparentFX

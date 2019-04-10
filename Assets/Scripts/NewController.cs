@@ -3,26 +3,21 @@ using UnityEngine.Events;
 
 public class NewController : MonoBehaviour {
 
-	public float walkSpeed;
+    public float walkSpeed = 5;
+    public float runSpeed = 6;
+    public float walkSword = 4;
+    public float jumpHeight = 1;
+    [Range(0, 1)]
+    public float airControlProcent;
+    public float gravity = -12;
+    public float turnSmoothTime = .2f;
+    float turnSmoothVelocity;
+    public float SpeedSmoothTime = .1f;
+    float speedSmoothVelocity;
+    float currentSpeed;
+    float velocityY;
 
-	public float walkSword;
-
-	public float runSpeed;
-
-	public float jumpHeight;
-
-	public float gravity;
-	public float SpeedSmoothTime;
-	public float airControlProcent;
-	public float turnSmoothTime;
-
-	[SerializeField] private float turnSmoothVelocity;
-	[SerializeField] private float speedSmoothVelocity;
-	[SerializeField] private float currentSpeed;
-	[SerializeField] private float velocityY;
-
-
-	[SerializeField] private CharacterController controller;
+    [SerializeField] private CharacterController controller;
 
 	[SerializeField] private Animator animator;
 
@@ -36,8 +31,6 @@ public class NewController : MonoBehaviour {
 	bool attackMode;
 	int activeSword;
 
-	//UnityEvent myevent = new UnityEvent();
-
 	void Start () {
 
 		controller = GetComponent<CharacterController>();
@@ -47,8 +40,6 @@ public class NewController : MonoBehaviour {
 
 		isActiveSword = false;
 		Sword.SetActive(isActiveSword);
-
-		//myevent.AddListener(ShowSword);
 	}
 	
 	void Update () {
