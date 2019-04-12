@@ -3,6 +3,16 @@ using UnityEngine.AI;
 
 public class AIBoss : MonoBehaviour {
 
+    public Inventory inventoryPlayer;
+    public Characteristic characteristic;
+    public Item[] itemMass;
+
+    public int GoldCoint;
+    public int SilverCoint;
+    public int BronzeCoint;
+
+    public int Exp;
+
     public string nameSpawn;
 
     public int maxHP;
@@ -27,8 +37,15 @@ public class AIBoss : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            playerEnter = true;
-            spawnEnter = false;
+            for (int i = 0; i < itemMass.Length; i++)
+                inventoryPlayer.Add(itemMass[i]);
+            characteristic.RealExp += Exp;
+            inventoryPlayer.GoldCoint += GoldCoint;
+            inventoryPlayer.SilverCoint += SilverCoint;
+            inventoryPlayer.BronzeCoint += BronzeCoint;
+            Destroy(gameObject);
+        //    playerEnter = true;
+        //    spawnEnter = false;
         }
     }
 
